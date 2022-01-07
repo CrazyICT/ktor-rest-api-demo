@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.mrcrazy.ApplicationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-01-07T22:17:23" hostname="Crazy-MacBook-2.local" time="0.553">
+  <properties/>
+  <testcase name="testRoot" classname="dev.mrcrazy.ApplicationTest" time="0.366"/>
+  <testcase name="testCanCreateCustomer" classname="dev.mrcrazy.ApplicationTest" time="0.187"/>
+  <system-out><![CDATA[2022-01-07 23:17:23.989 [Test worker] INFO  ktor.test - Autoreload is disabled because the development mode is off.
+2022-01-07 23:17:23.995 [Test worker] INFO  ktor.test - Application started in 0.046 seconds.
+2022-01-07 23:17:24.150 [Test worker] INFO  ktor.test - Autoreload is disabled because the development mode is off.
+2022-01-07 23:17:24.150 [Test worker] INFO  ktor.test - Application started in 0.001 seconds.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
