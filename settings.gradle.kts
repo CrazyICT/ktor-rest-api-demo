@@ -1,1 +1,1 @@
-rootProject.name = "mrcrazy.dev.asdn-api"
+rootProject.name = "ASDN-api"

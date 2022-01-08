@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  asdn-api:
+    container_name: asdn-api-gui
+    build: .
+    ports:
+      - 8080:8080
+    links:
+      - db
+
+  db:
+    container_name: asdn-api-db
+    image: mysql:5.7
+    restart: "always"
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_USER: "root"
+      MYSQL_PASSWORD: "root"
+      MYSQL_DATABASE: "asdn_api_test"
+#    ports:
+#      - 3306:3306
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:

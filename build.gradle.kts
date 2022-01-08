@@ -9,6 +9,7 @@ plugins {
     application
     kotlin("jvm") version "1.6.10"
     id("org.jetbrains.kotlin.plugin.serialization") version "1.6.10"
+    id("com.github.johnrengelman.shadow") version "7.0.0"
 }
 
 group = "dev.mrcrazy"
@@ -19,11 +20,32 @@ application {
     mainClass.set("dev.mrcrazy.ApplicationKt")
 }
 
+tasks {
+    jar {
+        manifest {
+            attributes(
+                mapOf(
+                    "Main-Class" to "dev.mrcrazy.ApplicationKt", //will make your jar (produced by jar task) runnable
+                    "ImplementationTitle" to project.name,
+                    "Implementation-Version" to project.version)
+            )
+        }
+    }
+    shadowJar {
+        manifest {
+            attributes(Pair("Main-Class", "dev.example.ApplicationKt"))
+        }
+    }
+}
+
 repositories {
     mavenCentral()
 }
 
+
 dependencies {
+    implementation ("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version")
+
     implementation("io.ktor:ktor-server-core:$ktor_version")
     implementation("io.ktor:ktor-serialization:$ktor_version")
     implementation("io.ktor:ktor-server-netty:$ktor_version")
