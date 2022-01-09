@@ -1,8 +1,15 @@
 # Ktor REST API demo
 
 A simple REST API demo application, build in Kotlin with the Ktor framework.
+I used the basics of the Clean Code principles (See: [Uncle Bob - Clean Code](http://cleancoder.com/files/cleanCodeCourse.md))
 
-U can import the Postman Collection and try the endpoints
+### TODO
+
+This repo is build for (self)learning purposes and never completed. Also, it's still missing a lot of things ;-)
+
+* [-] Database setup eq. Migrations 
+* [-] UnitTests 
+* [-] A lot .. ;)
 
 ### Docker
 
