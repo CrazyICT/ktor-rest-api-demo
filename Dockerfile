@@ -19,7 +19,7 @@ RUN chmod -R 755 /app
 
 USER $APPLICATION_USER
 
-COPY --from=build /appbuild/build/libs/ASDN-api-*-all.jar /app/server.jar
+COPY --from=build /appbuild/build/libs/crazyict-ktor-demo-api-*-all.jar /app/server.jar
 #COPY --from=build /appbuild/resources/ /app/resources/
 WORKDIR /app
 

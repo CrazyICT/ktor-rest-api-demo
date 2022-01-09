@@ -11,7 +11,7 @@ fun Application.configureRouting() {
     routing {
         get("/") {
             // call.application.environment.log.info("Hello!")
-            call.respondText("The ASDN API")
+            call.respondText("The Fun API")
         }
     }
 }

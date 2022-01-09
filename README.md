@@ -7,7 +7,7 @@ U can import the Postman Collection and try the endpoints
 ### Docker
 
 ```
-docker build -t asdn-api .
-docker run -p 8080:8080 asdn-api
+docker build -t crazyict-ktor-demo-api .
+docker run -p 8080:8080 crazyict-ktor-demo-api
 ```
 

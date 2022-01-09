@@ -1,1 +1,1 @@
-rootProject.name = "ASDN-api"
+rootProject.name = "crazyict-ktor-demo-api"
