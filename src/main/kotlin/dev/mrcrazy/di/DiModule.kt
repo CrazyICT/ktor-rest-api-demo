@@ -1,11 +1,22 @@
 package dev.mrcrazy.di
 
-import dev.mrcrazy.data.services.CustomerServices
-import dev.mrcrazy.data.services.CustomersServiceImpl
-import dev.mrcrazy.repositories.CustomerRepository
+import dev.mrcrazy.config.AppConfig
+import dev.mrcrazy.data.DatabaseFactory
+import dev.mrcrazy.data.DatabaseFactoryImpl
+import dev.mrcrazy.features.customers.CustomersService
+import dev.mrcrazy.features.customers.data.CustomersLocalDataSource
+import dev.mrcrazy.features.customers.data.CustomersLocalDataSourceImpl
+import dev.mrcrazy.features.customers.repositories.CustomerRepositoryImpl
+import dev.mrcrazy.features.customers.repositories.CustomerRepository
 import org.koin.dsl.module
+import org.koin.dsl.single
 
-val customerModule = module {
-    single<CustomerServices> { CustomersServiceImpl(get())}
-    single { CustomerRepository() }
+val appModule = module {
+    single<AppConfig>()
+    single<DatabaseFactory> { DatabaseFactoryImpl(get()) }
+
+    // Customers
+    single<CustomersLocalDataSource> { CustomersLocalDataSourceImpl() }
+    single<CustomerRepository> { CustomerRepositoryImpl(get()) }
+    single<CustomersService>()
 }

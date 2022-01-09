@@ -6,12 +6,11 @@ import io.ktor.routing.*
 
 fun Application.configureRouting() {
 
-//    val environment = environment.config.propertyOrNull("ktor.environment")?.getString() ?: "development"
+    // val environment = environment.config.propertyOrNull("ktor.environment")?.getString() ?: "development"
 
     routing {
         get("/") {
-//            call.application.environment.log.info("Hello!")
-
+            // call.application.environment.log.info("Hello!")
             call.respondText("The ASDN API")
         }
     }
