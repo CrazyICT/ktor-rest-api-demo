@@ -1,6 +1,7 @@
 package dev.mrcrazy.data
 
 import dev.mrcrazy.config.AppConfig
+import dev.mrcrazy.features.customers.data.dao.Addresses
 import dev.mrcrazy.features.customers.data.dao.Customers
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.SchemaUtils
@@ -19,8 +20,9 @@ class DatabaseFactoryImpl(appConfig: AppConfig) : DatabaseFactory {
     }
 
     override fun createTables() = transaction {
-        SchemaUtils.create(
-            Customers
+        SchemaUtils.createMissingTablesAndColumns(
+            Customers,
+            Addresses
         )
     }
 }

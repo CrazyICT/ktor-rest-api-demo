@@ -29,6 +29,10 @@ fun Application.module(testing: Boolean = false, koinModules: List<Module> = lis
 
     setupConfig()
 
+    if (!testing) {
+        // do something
+    }
+
     val databaseFactory by inject<DatabaseFactory>()
     databaseFactory.connect()
     databaseFactory.createTables()

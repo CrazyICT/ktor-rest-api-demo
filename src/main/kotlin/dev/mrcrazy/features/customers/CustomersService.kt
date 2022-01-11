@@ -15,4 +15,8 @@ class CustomersService(private val customerRepository: CustomerRepository) {
     suspend fun create(customer: CustomerDTO): Int {
         return customerRepository.create(customer)
     }
+
+    suspend fun update(customer: CustomerDTO): Int {
+        return customerRepository.update(customer)
+    }
 }

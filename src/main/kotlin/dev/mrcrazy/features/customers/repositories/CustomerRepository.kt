@@ -9,4 +9,6 @@ interface CustomerRepository {
     suspend fun fetchById(id: Int): CustomerDTO?
 
     suspend fun create(customer: CustomerDTO): Int
+
+    suspend fun update(customer: CustomerDTO): Int
 }

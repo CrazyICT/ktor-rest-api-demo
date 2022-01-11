@@ -15,6 +15,7 @@ fun Application.customerRoutes() {
             create()
             list()
             find()
+            update()
         }
     }
 }
@@ -27,6 +28,21 @@ fun Route.create() {
         val newId = service.create(customerDTO)
 
         call.respond(customerDTO.copy(id = newId))
+    }
+}
+
+fun Route.update() {
+    val service by inject<CustomersService>()
+
+    patch("/") {
+        val customerDTO = call.receive<CustomerDTO>()
+        val updateId = service.update(customerDTO)
+
+        if (updateId == 0) {
+            call.respondText("Customer with ID ${customerDTO.id} not found", status = HttpStatusCode.NotFound)
+        }
+
+        return@patch call.respond(customerDTO)
     }
 }
 
